@@ -4,6 +4,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  repository_dispatch:
+    # this is the event_type passed in from the webhook, needs to match exactly what was defined in the webhook custom data payload
+    types: [ trigger-test-automation-katalon ]
 jobs:
   build:
     runs-on: windows-latest
